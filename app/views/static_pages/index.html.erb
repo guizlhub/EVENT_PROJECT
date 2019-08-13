@@ -1,0 +1,36 @@
+
+<p><h1><Salut </h1>
+     
+    <p> Tu trouvera ici les évènements qui existent </p>
+  <% if user_signed_in? %>
+  	<div class="container">
+  		<div class="row">
+    		<div class="col-lg-6 offset-sm-1">
+      <br><br><br>
+    
+
+    <li>
+      <%= link_to "Evènement", events_path %>
+    </li>
+		<br/>
+    <li>
+      <%= link_to "Edit email / password", edit_user_registration_path %>
+    </li>
+
+      
+   			</div>
+ 		 </div>
+	</div>
+
+
+  <% else %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+  	<h1 class="display-4">Bienvenue sur notre site de création d'évènement</h1>
+  	<p class="lead">Si tu recherches des évènements sur Lyon c'est ici !!</p>
+    <button type="button" class="btn btn-outline-secondary"><%= link_to "S'inscrire", new_user_registration_path %></button>
+
+	<button type="button" class="btn btn-outline-primary"><%= link_to 'Se connecter', new_user_session_path %></button>
+  <% end %>	
+</p>
